@@ -150,8 +150,12 @@ function removeItemFromStorage(item) {
 
 function clearItems() {
   //itemList.innerHTML = '';
-  while (itemList.firstChild) {
-    itemList.removeChild(itemList.firstChild);
+  if (confirm('Delete all?')) {
+    while (itemList.firstChild) {
+      itemList.removeChild(itemList.firstChild);
+    }
+  } else {
+    return;
   }
 
   // Clear from local storage
